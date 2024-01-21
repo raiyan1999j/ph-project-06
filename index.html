@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- style-css -->
-    <link rel="stylesheet" href="./resource/css/style.css" />
     <!-- tailwind-css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- daisy-ui -->
@@ -26,18 +24,35 @@
       src="https://kit.fontawesome.com/f1458b3047.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            },
+            screens:{
+              'sm':{'min':'0px','max':'640px'}
+            },
+            fontFamily:{
+              'poppins':['Poppins','sans-serif']
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body class="fontFamily">
+  <body class="poppins">
     <!-- headerArea-start -->
     <header>
       <!-- navArea-start -->
-      <div class="navbar justify-between bg-base-100 w-[1170px] mx-auto">
+      <div class="navbar justify-between bg-base-100 w-[1170px] mx-auto sm:w-[520px]">
         <div>
           <a class="btn btn-ghost text-xl text-[35px] font-bold capitalize"
             >bike dekho</a
           >
         </div>
-        <div class="hidden lg:flex">
+        <div class="sm:hidden">
           <ul class="menu menu-horizontal px-1">
             <li class="capitalize text-base font-medium">
               <a href="#home">home</a>
@@ -58,14 +73,19 @@
             </li>
           </ul>
         </div>
+        <div class="hidden sm:block">
+          <div>
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
       </div>
       <!-- navArea-finish -->
       <!-- bannerArea-start -->
       <section class="mt-14">
-        <div class="w-[1170px] mx-auto bg-[#E76F511A]">
+        <div class="w-[1170px] mx-auto bg-[#E76F511A] sm:w-[520px]">
           <div class="carousel w-full">
             <div id="slide1" class="carousel-item relative w-full">
-              <div class="grid grid-cols-2 py-[103px] px-[104px]">
+              <div class="grid grid-cols-2 py-[103px] px-[104px] sm:grid-cols-1 sm:w-full sm:justify-items-center sm:text-center">
                 <div class="w-[475px]">
                   <h1 class="text-6xl font-bold leading-[75px] capitalize">
                     ride-on r15 v4 with smile
@@ -81,7 +101,7 @@
                     purchase
                   </button>
                 </div>
-                <div class="w-[406px] h-[343px]">
+                <div class="w-[406px] h-[343px] sm:mt-10">
                   <img
                     src="./resource/image/bike1.png"
                     class="w-full object-cover"
@@ -96,7 +116,7 @@
               </div>
             </div>
             <div id="slide2" class="carousel-item relative w-full">
-              <div class="grid grid-cols-2 py-[103px] px-[104px]">
+              <div class="grid grid-cols-2 py-[103px] px-[104px] sm:grid-cols-1 sm:w-full sm:justify-items-center sm:text-center">
                 <div class="w-[475px]">
                   <h1 class="text-6xl font-bold leading-[75px] capitalize">
                     ride-on r15 v4 with smile
@@ -112,7 +132,7 @@
                     purchase
                   </button>
                 </div>
-                <div class="w-[406px] h-[343px]">
+                <div class="w-[406px] h-[343px] sm:mt-10">
                   <img
                     src="./resource/image/bike2.png"
                     class="w-full object-cover"
@@ -127,7 +147,7 @@
               </div>
             </div>
             <div id="slide3" class="carousel-item relative w-full">
-              <div class="grid grid-cols-2 py-[103px] px-[104px]">
+              <div class="grid grid-cols-2 py-[103px] px-[104px] sm:grid-cols-1 sm:w-full sm:justify-items-center sm:text-center">
                 <div class="w-[475px]">
                   <h1 class="text-6xl font-bold leading-[75px] capitalize">
                     ride-on r15 v4 with smile
@@ -143,7 +163,7 @@
                     purchase
                   </button>
                 </div>
-                <div class="w-[406px] h-[343px]">
+                <div class="w-[406px] h-[343px] sm:mt-10">
                   <img
                     src="./resource/image/bike3.png"
                     class="w-full object-cover"
@@ -158,7 +178,7 @@
               </div>
             </div>
             <div id="slide4" class="carousel-item relative w-full">
-              <div class="grid grid-cols-2 py-[103px] px-[104px]">
+              <div class="grid grid-cols-2 py-[103px] px-[104px] sm:grid-cols-1 sm:w-full sm:justify-items-center sm:text-center">
                 <div class="w-[475px]">
                   <h1 class="text-6xl font-bold leading-[75px] capitalize">
                     ride-on r15 v4 with smile
@@ -174,7 +194,7 @@
                     purchase
                   </button>
                 </div>
-                <div class="w-[406px] h-[343px]">
+                <div class="w-[406px] h-[343px] sm:mt-10">
                   <img
                     src="./resource/image/bike4.png"
                     class="w-full object-cover"
@@ -198,20 +218,20 @@
     <main>
       <!-- featureArea-start -->
       <section class="mt-[169px]">
-        <div class="w-[1170px] mx-auto flex flex-col items-center">
-          <h2 class="text-5xl font-semibold">Fetured Bikes In This Year</h2>
+        <div class="w-[1170px] mx-auto flex flex-col items-center sm:w-[520px]">
+          <h2 class="text-5xl font-semibold sm:text-center">Fetured Bikes In This Year</h2>
           <p class="mt-2 mb-[50px] text-[#E76F51] text-sm font-semibold">
             Best bike collection
           </p>
         </div>
-        <div class="w-[1170px] mx-auto">
+        <div class="w-[1170px] mx-auto sm:w-[520px]">
           <div class="carousel w-full">
             <div id="slide5" class="carousel-item relative w-full">
-              <div class="grid grid-cols-3 gap-x-[138px]">
+              <div class="grid grid-cols-3 gap-x-[138px] sm:grid-cols-1 sm:w-full sm:justify-items-center">
                 <div class="h-[243px] w-[288px]">
                   <img src="./resource/image/feature-bike.png" alt="latest1" />
                 </div>
-                <div class="h-[243px] w-[288px]">
+                <div class="h-[243px] w-[288px] my-3">
                   <img src="./resource/image/feature-bike.png" alt="latest2" />
                 </div>
                 <div class="h-[243px] w-[288px]">
@@ -226,11 +246,11 @@
               </div>
             </div>
             <div id="slide6" class="carousel-item relative w-full">
-              <div class="grid grid-cols-3 gap-x-[138px]">
+              <div class="grid grid-cols-3 gap-x-[138px] sm:grid-cols-1 sm:w-full sm:justify-items-center">
                 <div class="h-[243px] w-[288px]">
                   <img src="./resource/image/feature-bike.png" alt="latest1" />
                 </div>
-                <div class="h-[243px] w-[288px]">
+                <div class="h-[243px] w-[288px] my-3">
                   <img src="./resource/image/feature-bike.png" alt="latest2" />
                 </div>
                 <div class="h-[243px] w-[288px]">
@@ -245,11 +265,11 @@
               </div>
             </div>
             <div id="slide7" class="carousel-item relative w-full">
-              <div class="grid grid-cols-3 gap-x-[138px]">
+              <div class="grid grid-cols-3 gap-x-[138px] sm:grid-cols-1 sm:w-full sm:justify-items-center">
                 <div class="h-[243px] w-[288px]">
                   <img src="./resource/image/feature-bike.png" alt="latest1" />
                 </div>
-                <div class="h-[243px] w-[288px]">
+                <div class="h-[243px] w-[288px] my-3">
                   <img src="./resource/image/feature-bike.png" alt="latest2" />
                 </div>
                 <div class="h-[243px] w-[288px]">
@@ -264,11 +284,11 @@
               </div>
             </div>
             <div id="slide8" class="carousel-item relative w-full">
-              <div class="grid grid-cols-3 gap-x-[138px]">
+              <div class="grid grid-cols-3 gap-x-[138px] sm:grid-cols-1 sm:w-full sm:justify-items-center">
                 <div class="h-[243px] w-[288px]">
                   <img src="./resource/image/feature-bike.png" alt="latest1" />
                 </div>
-                <div class="h-[243px] w-[288px]">
+                <div class="h-[243px] w-[288px] my-3">
                   <img src="./resource/image/feature-bike.png" alt="latest2" />
                 </div>
                 <div class="h-[243px] w-[288px]">
@@ -288,15 +308,15 @@
       <!-- featureArea-finish -->
       <!-- productArea-start -->
       <section class="mt-[130px]">
-        <div class="w-[1170px] mx-auto flex justify-center">
+        <div class="w-[1170px] mx-auto flex justify-center sm:w-[520px]">
           <h2
             class="mb-[70px] text-[#0A0826] text-5xl font-semibold capitalize"
-          >
+          > 
             latest news
           </h2>
         </div>
-        <div class="w-[1170px] mx-auto">
-          <div class="grid grid-cols-3 gap-x-[60px]">
+        <div class="w-[1170px] mx-auto sm:w-[520px]">
+          <div class="grid grid-cols-3 gap-x-[60px] sm:grid-cols-1 sm:justify-items-center">
             <div>
               <div class="card w-96 shadow-xl">
                 <figure>
@@ -312,7 +332,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lacus, fermentum amet faucibus sed id nisi lectus at.
                   </p>
-                  <div class="card-actions justify-start">
+                  <div class="card-actions justify-start sm:justify-center">
                     <button
                       class="btn bg-[#E76F51] text-white text-lg font-medium capitalize"
                     >
@@ -337,7 +357,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lacus, fermentum amet faucibus sed id nisi lectus at.
                   </p>
-                  <div class="card-actions justify-start">
+                  <div class="card-actions justify-start sm:justify-center">
                     <button
                       class="btn bg-[#E76F51] text-white text-lg font-medium capitalize"
                     >
@@ -362,7 +382,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lacus, fermentum amet faucibus sed id nisi lectus at.
                   </p>
-                  <div class="card-actions justify-start">
+                  <div class="card-actions justify-start sm:justify-center">
                     <button
                       class="btn bg-[#E76F51] text-white text-lg font-medium capitalize"
                     >
@@ -378,13 +398,13 @@
       <!-- productArea-finish -->
       <!-- serviceArea-start -->
       <section class="mt-[130px]">
-        <div class="w-[1170px] mx-auto flex justify-center mb-[50px]">
+        <div class="w-[1170px] mx-auto flex justify-center mb-[50px] sm:w-[520px]">
           <h2 class="text-5xl font-semibold text-[#0A0826] capitalize">
             happy <span class="text-[#E76F51]">client says</span>
           </h2>
         </div>
-        <div class="w-[1170px] mx-auto">
-          <div class="grid grid-cols-3 gap-x-[44px]">
+        <div class="w-[1170px] mx-auto sm:w-[520px]">
+          <div class="grid grid-cols-3 gap-x-11 sm:grid-cols-1 sm:justify-items-center sm:gap-y-11">
             <div>
               <div
                 class="card w-96 bg-base-100 shadow-xl border border-solid border-[#DEDEDE] py-[40px] px-[35px]"
@@ -499,13 +519,13 @@
       <!-- serviceArea-finish -->
       <!-- faqArea-start -->
       <section class="mt-[130px]">
-        <div class="w-[1170px] mx-auto flex justify-center mb-[50px]">
-          <h2 class="text-[#0D0925] text-5xl font-semibold leading-[50px]">
+        <div class="w-[1170px] mx-auto flex justify-center mb-[50px] sm:w-[520px]">
+          <h2 class="text-[#0D0925] text-5xl font-semibold leading-[50px] sm:text-center sm:leading-normal">
             Frequently Asked <span class="text-[#E76F51]">Questions</span>
           </h2>
         </div>
-        <div class="w-[1170px] mx-auto">
-          <div class="grid grid-cols-2 gap-x-[116px]">
+        <div class="w-[1170px] mx-auto sm:w-[520px]">
+          <div class="grid grid-cols-2 gap-x-[116px] sm:grid-cols-1 sm:gap-y-28 sm:justify-items-center">
             <div class="w-[446px] h-[495px]">
               <img src="./resource/image/faq.png" alt="faq" />
             </div>
@@ -547,7 +567,7 @@
                   </div>
                 </div>
                 <div
-                  class="collapse collapse-arrow join-item border border-base-300"
+                  class="collapse collapse-arrow join-item border border-base-300 border-[#D5E5FB] mb-[13px] bg-[#FFF]"
                 >
                   <input type="radio" name="my-accordion-4" />
                   <div class="collapse-title text-xl font-medium">
@@ -564,7 +584,7 @@
                   </div>
                 </div>
                 <div
-                  class="collapse collapse-arrow join-item border broder-solid border-[#D5E5FB] mb-[13px] bg-[#FFF]"
+                  class="collapse collapse-arrow join-item border broder-solid border-[#D5E5FB] bg-[#FFF]"
                 >
                   <input type="radio" name="my-accordion-4" />
                   <div class="collapse-title text-xl font-medium">
@@ -591,23 +611,22 @@
     <!-- footerArea-start -->
     <footer>
       <section class="bg-[#0B0D17] mt-[156px]">
-        <div class="w-[1170px] mx-auto pt-[56px] pb-[84px]">
-          <div class="grid grid-cols-[475px_160px] justify-between
-          ">
-            <div class="text-white capitalize text-base font-normal leading-6 text-[#D9DBE1] flex flex-col">
+        <div class="w-[1170px] mx-auto pt-[56px] pb-[84px] sm:w-[520px]">
+          <div class="grid grid-cols-[475px_160px] justify-between sm:grid-cols-1 sm:gap-y-10 sm:justify-items-center">
+            <div class="text-white capitalize text-base font-normal leading-6 text-[#D9DBE1] flex flex-col sm:items-center">
               <div class="mb-3 ">
-                <ul class="flex flex-row ">
+                <ul class="flex flex-row">
                   <li class="mr-6">download now</li>
                   <li>license</li>
                 </ul>
               </div>
               <div class="mb-6">
                 <ul class="flex flex-row justify-between">
-                  <li>about</li>
-                  <li>feature</li>
-                  <li>pricing</li>
-                  <li>careers</li>
-                  <li>help</li>
+                  <li class="sm:pr-3">about</li>
+                  <li class="sm:pr-3">feature</li>
+                  <li class="sm:pr-3">pricing</li>
+                  <li class="sm:pr-3">careers</li>
+                  <li class="sm:pr-3">help</li>
                   <li>privacy policy</li>
                 </ul>
               </div>
@@ -615,7 +634,7 @@
                 &#169;2024 bike.All rights reserve
               </div>
             </div>
-            <div class="flex flex-col capitalize text-lg font-medium leading-7 text-[#D9DBE1]">
+            <div class="flex flex-col capitalize text-lg font-medium leading-7 text-[#D9DBE1] sm:items-center">
               <div>
                 get the app
               </div>
